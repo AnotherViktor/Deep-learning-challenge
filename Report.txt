@@ -1,0 +1,71 @@
+
+                              Report on the Neural Network Model for Alphabet Soup
+
+         Overview of the Analysis
+
+The purpose of this analysis is to design and evaluate a deep learning model to predict the success of funding applications for Alphabet Soup. 
+The analysis involves preprocessing the dataset, building a neural network, optimizing its architecture, and assessing its performance to 
+achieve a predictive accuracy higher than 75%.
+
+         Results
+
+    Data Preprocessing
+
+  Target Variable(s):
+  The target variable is `IS_SUCCESSFUL`, indicating whether a funding application was successful (1) or not (0).
+
+  Feature Variable(s):
+  Features include all other columns in the dataset after preprocessing, such as categorical variables (e.g., `APPLICATION_TYPE`, `CLASSIFICATION`) 
+  and numeric variables.
+
+  Removed Variables:
+  The columns `EIN` and `NAME` were removed as they are identifiers and do not provide meaningful predictive information.
+
+    Compiling, Training, and Evaluating the Model
+
+    Attempt 1: Baseline Model
+
+    Architecture:
+
+  - Hidden Layers: 2
+  - Neurons: 80 and 30 neurons in the first and second layers, respectively.
+  - Activation Function: ReLU for hidden layers, Sigmoid for the output layer.
+
+    Performance: Accuracy: ~72.6%.
+    Outcome: Did not achieve the target performance of 75%.
+
+    Attempt 2: Increased Neurons
+   Modifications:
+  - Increased the number of neurons to 256 and 128 in the first two layers.
+  - Maintained ReLU activation for hidden layers and Sigmoid for the output.
+  - Increased epochs to 100 and batch size to 32.
+   Performance: Accuracy: ~74.1%.
+   Outcome: Improved performance but still below the target.
+
+    Attempt 3: Added Hidden Layers
+    Modifications:
+  - Added a third hidden layer with 64 neurons.
+  - Used a combination of ReLU and Tanh activation functions.
+  - Increased epochs to 150.
+    Performance: Accuracy: ~74.8%.
+   Outcome:  Close to target but did not surpass 75%.
+
+     Attempt 4: Increased Epochs and Adjusted Batch Size
+    Modifications:
+  - Reduced neurons to 128 and 64 in two layers to prevent overfitting.
+  - Increased epochs to 200 and batch size to 64.
+    Performance: Accuracy: ~75.2%.
+    Outcome: Achieved the target accuracy of 75% with this configuration.
+
+   Summary
+The optimized model achieved an accuracy of ~75.2% by using three hidden layers with 128, 64 neurons, and appropriate adjustments to the 
+training regimen. While the target performance was met, further improvements could involve hyperparameter tuning and exploring alternative 
+models like Gradient Boosting or Random Forest for structured data.
+
+    Recommendations
+1. Alternative Model: Considering using ensemble techniques like Gradient Boosting or Random Forest, which may outperform neural networks 
+   for this type of structured data.
+2. Additional Features: Investigate additional features or external datasets to improve predictions.
+
+
+This concludes the analysis and recommendations for Alphabet Soup.
